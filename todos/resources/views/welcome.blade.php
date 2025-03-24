@@ -1,4 +1,1 @@
-
-<?php
-
-echo "hello wrold";
+@extends('layouts.main')
