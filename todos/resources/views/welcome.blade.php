@@ -8,7 +8,7 @@
 @section('main-section')
 
 <div class="container">
-    <div class="d-flex jutify-content-between align-items-center my-5">
+    <div class="d-flex justify-content-between align-items-center my-5">
         <div class="h2">All Todos</div>
         <a href="{{ route("todo.create") }}" class="btn btn-primary btn-lg">Add Todo</a>
     </div>
