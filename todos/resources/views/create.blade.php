@@ -16,15 +16,16 @@
 
     <div class="card">
         <div class="card-body">
-            <form action="" method="post">
+            <form action="{{ route("todo.store") }}" method="post">
+                @csrf
                 <label for="" class="form-label mt-4">Name</label>
                 <input type="text" name="name" class="form-control">
 
                 <label for="" class="form-label mt-4">Work</label>
-                <input type="text" name="name" class="form-control">
+                <input type="text" name="work" class="form-control">
 
                 <label for="" class="form-label mt-4">Due Date</label>
-                <input type="date" name="name" class="form-control">
+                <input type="date" name="dueDate" class="form-control">
 
                 <button class="btn btn-primary btn-lg mt-4">Add Todo</button>
 
