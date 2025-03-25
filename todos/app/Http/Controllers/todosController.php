@@ -8,6 +8,14 @@ class todosController extends Controller
 {
     public function store(Request $request)
     {
-        print_r($request->all());
+        //print_r($request->all());
+        $request->validate(
+            [
+                "name"=> "required",
+                "work"=> "required",
+                "dueDate"=> "required"
+            ]
+            );
+            echo "validation complete!";
     }
 }
