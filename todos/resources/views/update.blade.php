@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @push('head')
-    <title>Add Todo</title>
+    <title>Update Todo</title>
 @endpush
 
 
@@ -9,14 +9,15 @@
 
 <div class="container">
     <div class="d-flex jutify-content-between align-items-center my-5">
-        <div class="h2">Add Todo</div>
-        <a href="{{ route("todo.home") }}" class="btn btn-primary btn-lg">Back</a>
+        <div class="h2">Update Todo</div>
+        <a href="" class="btn btn-primary btn-lg">Back</a>
     </div>
 
 
     <div class="card">
         <div class="card-body">
             <form action="" method="post">
+                @csrf
                 <label for="" class="form-label mt-4">Name</label>
                 <input type="text" name="name" class="form-control">
 
