@@ -40,4 +40,38 @@ class todosController extends Controller
         todos::find($id)->delete();
         return redirect(route("todo.home"));
     }
+
+    public function edit($id)
+    {
+        $todo=todos::find($id);
+        $data=compact('todo');
+        return view("update")->with($data);
+
+    }
+
+    public function updateData(Request $request)
+    {
+        $request->validate(
+            [
+                "name"=> "required",
+                "work"=> "required",
+                "dueDate"=> "required"
+            ]
+            );
+            $id = $request["id"];
+            //echo "validation complete!";
+            $todo = todos::find($id);
+            $todo->name = $request['name'];
+            $todo->work = $request['work'];
+            $todo->dueDate = $request['dueDate'];
+            $todo->save();
+
+            return redirect(route("todo.home"));
+    }
+
+
+
+
+
+
 }

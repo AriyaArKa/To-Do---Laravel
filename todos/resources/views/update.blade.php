@@ -14,20 +14,23 @@
     </div>
 
 
+{{-- {{ print_r($todo) }} --}}
+
     <div class="card">
         <div class="card-body">
-            <form action="" method="post">
+            <form action="{{ route("todo.updateData") }}" method="post">
                 @csrf
                 <label for="" class="form-label mt-4">Name</label>
-                <input type="text" name="name" class="form-control">
+                <input type="text" name="name" class="form-control" value="{{ $todo->name }}">
 
                 <label for="" class="form-label mt-4">Work</label>
-                <input type="text" name="name" class="form-control">
+                <input type="text" name="work" class="form-control" value="{{ $todo->work }}">
 
                 <label for="" class="form-label mt-4">Due Date</label>
-                <input type="date" name="name" class="form-control">
+                <input type="date" name="dueDate" class="form-control" value="{{ $todo->dueDate }}">
 
-                <button class="btn btn-primary btn-lg mt-4">Add Todo</button>
+                <input type="number" name="id" value="{{ $todo->id }}" hidden>
+                <button class="btn btn-primary btn-lg mt-4">Update Todo</button>
 
             </form>
         </div>
