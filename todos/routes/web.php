@@ -14,3 +14,5 @@ Route::get('/edit', function () {
 //create todo route
 Route::post('/create',[todosController::class,'store']) -> name("todo.store");
 
+//delete todo route
+Route::get('/delete/{id}',[todosController::class,'delete']) -> name("todo.delete");
